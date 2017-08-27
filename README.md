@@ -25,14 +25,12 @@ Example Playbook
 Here is a simple example playbook to use this role:
 
 ```
-hosts: rootenabled
+hosts: all
 user: myuser
 become: true
 roles:
   - { role: disableroot, tags: [ 'disableroot' ] }
 ```
-
-You might want to specify concerned hosts in a specific group in your inventory file since Ansible always fails if authentication is not working.
 
 License
 -------
