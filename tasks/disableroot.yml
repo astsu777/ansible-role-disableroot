@@ -1,0 +1,11 @@
+---
+# Check the status of the root account
+- name: (DISABLEROOT) Check the root account status
+  command: passwd -S root
+  register: passwd
+  changed_when: false
+
+# If the root status is not locked, lock it
+- name: (DISABLEROOT) Lock out the root account
+  command: passwd -l root
+  when: "'root L' not in passwd.stdout"
