@@ -1,3 +1,3 @@
 ---
 # Disable the root account by locking its password
-- include: disableroot.yml
+- include_tasks: disableroot.yml
